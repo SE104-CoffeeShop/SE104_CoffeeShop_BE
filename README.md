@@ -31,8 +31,8 @@ Make sure you have environment setup properly. You will need PHP8.1, composer an
     - User: ID, username, email, password, name, role
     - Product: ID, name, unit_price
     - Customer: ID, name, phone_number
-    - Voucher: ID, type, amount, start_date, end_date, quantity
-    - Invoice: ID, user_id, customer_id, voucher_id (nullable), price, discount_price, final_price, note (nullable)
+    - Voucher: ID, voucher_code, type, amount, start_date, end_date, quantity
+    - Invoice: ID, user_id, customer_id, voucher_id (nullable), price, discount_price, final_price, note (nullable), date
     - Invoice_detail: invoice_id, product_id, quantity
     - 
 3. API
