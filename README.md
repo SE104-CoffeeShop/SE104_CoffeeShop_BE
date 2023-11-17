@@ -36,6 +36,17 @@ Make sure you have environment setup properly. You will need PHP8.1, composer an
     - Invoice_detail: invoice_id, product_id, quantity
     - 
 3. API
-    - List Products: [GET] /staff/products
-    - 
+   + Staff
+       - List Products: [GET] /staff/products
+       - Checkout Invoice: [POST] /staff/invoices
+       - Verify Voucher: [POST] /staff/verify-voucher
+       - List Invoice: [GET] /staff/invoices (pending invoices which has not been served)
+       - Add Member: [POST] /staff/members
+   + Admin
+       - List, Add, Update, Delete Products: [GET, POST, PATCH, DELETE] /admin/products (Quản lý products)
+       - List members: [GET] /admin/members
+       - List, Add, Update, Delete Vouchers: [GET, POST, PATCH, DELETE] /admin/vouchers (Quản lý vouchers)
+       - List Invoice: [GET] /admin/invoices
+       - View detail: [GET] /admin/invoices/{id}
+       - List, Add, Update, Delete User: [GET, POST, PATCH, DELETE] /admin/users (Quản lý nhân viên, user)
 5. Docs API
