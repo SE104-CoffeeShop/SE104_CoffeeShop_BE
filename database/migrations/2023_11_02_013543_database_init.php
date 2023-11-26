@@ -35,12 +35,13 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('customer_id');
+            $table->integer('table_number');
             $table->string('voucher_code')->nullable();
-            $table->float('price');
-            $table->float('discount_price');
-            $table->float('final_price');
+            $table->text('note')->nullable();
             $table->dateTime('date');
-            $table->text('note');
+            $table->float('total_price');
+            $table->float('discount_price')->default(0);
+            $table->float('final_price');
         });
 
         Schema::create('invoice_detail', function (Blueprint $table) {
