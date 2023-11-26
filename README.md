@@ -37,11 +37,11 @@ Make sure you have environment setup properly. You will need PHP8.1, composer an
     - 
 3. API
    + Staff
-       - List Products: [GET] /staff/products
-       - Checkout Invoice: [POST] /staff/invoices
-       - Verify Voucher: [POST] /staff/verify-voucher
-       - List Invoice: [GET] /staff/invoices (pending invoices which has not been served)
-       - Add Member: [POST] /staff/members
+       - List Products: [GET] /products
+       - Checkout Invoice: [POST] /invoices/checkout
+       - Verify Voucher: [POST] /vouchers/verify
+       - List Invoice Pending: [GET] /invoices (pending invoices which has not been served)
+       - Add Member: [POST] /members
    + Admin
        - List, Add, Update, Delete Products: [GET, POST, PATCH, DELETE] /admin/products (Quản lý products)
        - List members: [GET] /admin/members
