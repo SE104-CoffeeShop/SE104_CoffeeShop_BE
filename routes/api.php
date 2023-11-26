@@ -15,21 +15,15 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::prefix('/api/v1')->group(function () {
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::post('/logout', [AuthController::class, 'logout']);
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/user', function (Request $request) {
-        return $request->user();
+        Route::get('/products', [\App\Http\Controllers\Api\EmployeeController::class, 'getForms']);
+
+
     });
 
-    Route::apiResource('/users', UserController::class);
-
-    Route::get('/user/forms', [\App\Http\Controllers\Api\EmployeeController::class, 'getForms']);
-    Route::post('/user/post-form', [\App\Http\Controllers\Api\EmployeeController::class, 'postForms']);
-    Route::get('/user/manager-forms', [\App\Http\Controllers\Api\EmployeeController::class, 'getManagerForms']);
-    Route::post('/user/manager-forms', [\App\Http\Controllers\Api\EmployeeController::class, 'postManagerForms']);
-
+    Route::post('/signup', [AuthController::class, 'signup']);
+    Route::post('/login', [AuthController::class, 'login']);
 });
-
-Route::post('/signup', [AuthController::class, 'signup']);
-Route::post('/login', [AuthController::class, 'login']);

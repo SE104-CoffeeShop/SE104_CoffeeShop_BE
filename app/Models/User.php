@@ -32,14 +32,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function forms() {
-        return $this->hasMany(RequestForm::class, 'sender_id');
-    }
-
-    public function managerForms() {
-        return $this->hasMany(RequestForm::class, 'manager_id');
-    }
-
     public function manager() {
         return $this->belongsTo(User::class, 'manager_id');
     }
