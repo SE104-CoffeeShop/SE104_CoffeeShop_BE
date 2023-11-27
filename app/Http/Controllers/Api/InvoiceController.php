@@ -13,12 +13,6 @@ class InvoiceController extends Controller
         return response(json_encode($invoices), 200);
     }
 
-    public function store(Request $request) {
-        $invoice = Invoice::create($request->all());
-
-        return response(json_encode($invoice), 201);
-    }
-
     public function update(Request $request, Invoice $invoice) {
         $invoice->update($request->all());
 
