@@ -21,6 +21,7 @@ class Invoice extends Model
         'total_price',
         'discount_price',
         'final_price',
+        'status',
     ];
 
     public function invoiceDetails() {

@@ -11,14 +11,16 @@ return new class extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('image_path')->nullable();
-            $table->integer('quantity');
+            $table->text('image')->nullable();
+            $table->integer('unit_price');
+            $table->timestamps();
         });
 
         Schema::create('customer', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->string('phone_number');
+            $table->timestamps();
         });
 
         Schema::create('voucher', function (Blueprint $table) {
@@ -29,6 +31,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
+            $table->timestamps();
         });
 
         Schema::create('invoice', function (Blueprint $table) {
@@ -42,6 +45,8 @@ return new class extends Migration
             $table->float('total_price');
             $table->float('discount_price')->default(0);
             $table->float('final_price');
+            $table->string('status')->default('pending');
+            $table->timestamps();
         });
 
         Schema::create('invoice_detail', function (Blueprint $table) {
@@ -49,6 +54,7 @@ return new class extends Migration
             $table->integer('invoice_id');
             $table->integer('product_id');
             $table->integer('quantity');
+            $table->timestamps();
         });
     }
     public function down()
