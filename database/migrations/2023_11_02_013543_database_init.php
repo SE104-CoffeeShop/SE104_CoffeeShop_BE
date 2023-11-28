@@ -41,7 +41,6 @@ return new class extends Migration
             $table->integer('table_number');
             $table->string('voucher_code')->nullable();
             $table->text('note')->nullable();
-            $table->dateTime('date');
             $table->float('total_price');
             $table->float('discount_price')->default(0);
             $table->float('final_price');

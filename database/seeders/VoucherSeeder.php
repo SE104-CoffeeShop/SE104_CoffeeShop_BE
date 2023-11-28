@@ -29,6 +29,14 @@ class VoucherSeeder extends Seeder
                 'start_date' => date('Y-m-d', strtotime('09/28/2023')),
                 'end_date' => date('Y-m-d', strtotime('01/01/2025')),
             ],
+            [
+                'voucher_code' => 'GIAMGIA5K',
+                'type' => 'direct',
+                'amount' => 5000,
+                'quantity' => 2,
+                'start_date' => date('Y-m-d', strtotime('09/28/2023')),
+                'end_date' => date('Y-m-d', strtotime('01/01/2025')),
+            ],
         ];
 
         foreach ($vouchers as $voucher) {

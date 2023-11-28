@@ -50,15 +50,15 @@ Route::delete('/staffs', [\App\Http\Controllers\Api\StaffController::class, 'des
 Route::get('/staffs/{staff}', [\App\Http\Controllers\Api\StaffController::class, 'show']);
 
 /* end test */
-//Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
-//Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'create']);
-//Route::get('/invoices/pending', [\App\Http\Controllers\Api\InvoiceController::class, 'getPending']);
-//
-//Route::patch('/invoices/{invoice}/finish', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'finish']);
-//Route::patch('/invoices/{invoice}/undo', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'undo']);
-//
-//Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
-//Route::post('/invoices/checkout', [\App\Http\Controllers\Api\InvoiceController::class, 'checkout']);
+Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
+Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'create']);
+Route::get('/invoices/pending', [\App\Http\Controllers\Api\InvoiceController::class, 'getPending']);
+
+Route::patch('/invoices/{invoice}/finish', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'finish']);
+Route::patch('/invoices/{invoice}/undo', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'undo']);
+
+Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
+Route::post('/invoices/checkout', [\App\Http\Controllers\Api\InvoiceCheckoutController::class, '__invoke']);
 
 Route::prefix('/v1')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);

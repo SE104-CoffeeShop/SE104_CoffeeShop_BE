@@ -10,7 +10,7 @@ class InvoiceController extends Controller
 {
     public function index() {
         $invoices = Invoice::paginate();
-        return response(json_encode($invoices), 200);
+        return response()->json($invoices);
     }
 
     public function update(Request $request, Invoice $invoice) {
