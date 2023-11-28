@@ -16,17 +16,17 @@ class CustomerController extends Controller
     public function store(Request $request) {
         $customer = Customer::create($request->all());
 
-        return response(json_encode($customer), 201);
+        return response()->json($customer)->setStatusCode(201);
     }
 
     public function update(Request $request, Customer $customer) {
         $customer->update($request->all());
 
-        return response(json_encode($customer), 200);
+        return response()->json($customer);
     }
 
     public function show(Customer $customer) {
-        return response(json_encode($customer), 200);
+        return response()->json($customer);
     }
 
     public function destroy(Customer $customer) {
