@@ -5,31 +5,49 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VerifyVoucherRequest;
 use App\Models\Voucher;
+use App\Services\VoucherService;
 
 class VoucherVerifyController extends Controller
 {
     public function __invoke(VerifyVoucherRequest $request) {
         $voucherCode = $request->get('voucher_code');
 
-        $voucher = Voucher::where('voucher_code', $voucherCode)->first();
+        [
+            'isAvailable' => $isAvailable,
+            'voucherType' => $voucherType,
+            'voucherAmount' => $voucherAmount,
+            'quantity' => $quantity,
+        ] = VoucherService::verifyVoucher($voucherCode);
 
-        if ($voucher == null) {
+        if (! $isAvailable) {
             $data = [
                 'is_available' => false,
                 'voucher_type' => null,
                 'voucher_amount' => null,
+                'message' => 'Voucher khong ton tai',
             ];
+
             return response($data, 200);
         }
 
-        $voucherType = $voucher['type'];
-        $voucherAmount = $voucher['amount'];
+        if ($quantity < 1) {
+            $data = [
+                'is_available' => true,
+                'voucher_type' => null,
+                'voucher_amount' => null,
+                'message' => 'Voucher nay da het luot su dung',
+            ];
+
+            return response($data, 200);
+        }
 
         $data = [
             'is_available' => true,
             'voucher_type' => $voucherType,
             'voucher_amount' => $voucherAmount,
+            'message' => 'Verify voucher thanh cong',
         ];
+
         return response($data, 200);
     }
 }
