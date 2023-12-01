@@ -25,7 +25,7 @@ Route::prefix('/v1')->group(function () {
             Route::get('/products/{product}', [\App\Http\Controllers\Api\ProductController::class, 'show']);
 
             Route::get('/staffs', [\App\Http\Controllers\Api\StaffController::class, 'index']);
-            Route::post('/staffs', [\App\Http\Controllers\Api\StaffController::class, 'create']);
+            Route::post('/staffs', [\App\Http\Controllers\Api\StaffController::class, 'store']);
             Route::put('/staffs', [\App\Http\Controllers\Api\StaffController::class, 'update']);
             Route::delete('/staffs', [\App\Http\Controllers\Api\StaffController::class, 'destroy']);
             Route::get('/staffs/{staff}', [\App\Http\Controllers\Api\StaffController::class, 'show']);
