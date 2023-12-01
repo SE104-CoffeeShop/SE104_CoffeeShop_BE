@@ -1,0 +1,2340 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/products:
+    post:
+      summary: ''
+      operationId: postApiProducts
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiProducts
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiProducts
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    get:
+      summary: ''
+      operationId: getApiProducts
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 1
+                      name: 'Tra da'
+                      image: ''
+                      unit_price: 2000
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                    -
+                      id: 2
+                      name: 'Tra sua'
+                      image: ''
+                      unit_price: 20000
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                    -
+                      id: 3
+                      name: 'Cafe den'
+                      image: ''
+                      unit_price: 15000
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                  first_page_url: 'http://localhost/api/products?page=1'
+                  from: 1
+                  last_page: 1
+                  last_page_url: 'http://localhost/api/products?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://localhost/api/products?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://localhost/api/products'
+                  per_page: 15
+                  prev_page_url: null
+                  to: 3
+                  total: 3
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Tra da'
+                        image: ''
+                        unit_price: 2000
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                      -
+                        id: 2
+                        name: 'Tra sua'
+                        image: ''
+                        unit_price: 20000
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                      -
+                        id: 3
+                        name: 'Cafe den'
+                        image: ''
+                        unit_price: 15000
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Tra da'
+                        image:
+                          type: string
+                          example: ''
+                        unit_price:
+                          type: integer
+                          example: 2000
+                        created_at:
+                          type: string
+                          example: '2023-11-28T08:45:02.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-11-28T08:45:02.000000Z'
+                  first_page_url:
+                    type: string
+                    example: 'http://localhost/api/products?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://localhost/api/products?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/products?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://localhost/api/products'
+                  per_page:
+                    type: integer
+                    example: 15
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 3
+                  total:
+                    type: integer
+                    example: 3
+      tags:
+        - Endpoints
+      security: []
+  '/api/products/{product_id}':
+    get:
+      summary: ''
+      operationId: getApiProductsProduct_id
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  name: 'Tra da'
+                  image: ''
+                  unit_price: 2000
+                  created_at: '2023-11-28T08:45:02.000000Z'
+                  updated_at: '2023-11-28T08:45:02.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: 'Tra da'
+                  image:
+                    type: string
+                    example: ''
+                  unit_price:
+                    type: integer
+                    example: 2000
+                  created_at:
+                    type: string
+                    example: '2023-11-28T08:45:02.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2023-11-28T08:45:02.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: product_id
+        description: 'The ID of the product.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/customers:
+    get:
+      summary: ''
+      operationId: getApiCustomers
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data: []
+                  first_page_url: 'http://localhost/api/customers?page=1'
+                  from: null
+                  last_page: 1
+                  last_page_url: 'http://localhost/api/customers?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://localhost/api/customers?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://localhost/api/customers'
+                  per_page: 15
+                  prev_page_url: null
+                  to: null
+                  total: 0
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example: []
+                  first_page_url:
+                    type: string
+                    example: 'http://localhost/api/customers?page=1'
+                  from:
+                    type: string
+                    example: null
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://localhost/api/customers?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/customers?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://localhost/api/customers'
+                  per_page:
+                    type: integer
+                    example: 15
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: string
+                    example: null
+                  total:
+                    type: integer
+                    example: 0
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiCustomers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiCustomers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiCustomers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/customers/{customer_id}':
+    get:
+      summary: ''
+      operationId: getApiCustomersCustomer_id
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'No query results for model [App\Models\Customer] 16'
+                  exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                  file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php'
+                  line: 391
+                  trace:
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php'
+                      line: 367
+                      function: prepareException
+                      class: Illuminate\Foundation\Exceptions\Handler
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\nunomaduro\collision\src\Adapters\Laravel\ExceptionHandler.php'
+                      line: 54
+                      function: render
+                      class: Illuminate\Foundation\Exceptions\Handler
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php'
+                      line: 51
+                      function: render
+                      class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 185
+                      function: handleException
+                      class: Illuminate\Routing\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                      line: 126
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                      line: 102
+                      function: handleRequest
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                      line: 54
+                      function: handleRequestUsingNamedLimiter
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 180
+                      function: handle
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 799
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 776
+                      function: runRouteWithinStack
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 740
+                      function: runRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 729
+                      function: dispatchToRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                      line: 190
+                      function: dispatch
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 141
+                      function: 'Illuminate\Foundation\Http\{closure}'
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php'
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php'
+                      line: 31
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php'
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php'
+                      line: 40
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php'
+                      line: 27
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php'
+                      line: 86
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Http\Middleware\HandleCors.php'
+                      line: 62
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 180
+                      function: handle
+                      class: Illuminate\Http\Middleware\HandleCors
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Http\Middleware\TrustProxies.php'
+                      line: 39
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 180
+                      function: handle
+                      class: Illuminate\Http\Middleware\TrustProxies
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                      line: 165
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                      line: 134
+                      function: sendRequestThroughRouter
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 299
+                      function: handle
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 287
+                      function: callLaravelOrLumenRoute
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 92
+                      function: makeApiCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 45
+                      function: makeResponseCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 35
+                      function: makeResponseCallIfConditionsPass
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                      line: 209
+                      function: __invoke
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                      line: 166
+                      function: iterateThroughStrategies
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                      line: 95
+                      function: fetchResponses
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                      line: 124
+                      function: processRoute
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                      line: 71
+                      function: extractEndpointsInfoFromLaravelApp
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                      line: 49
+                      function: extractEndpointsInfoAndWriteToDisk
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php'
+                      line: 51
+                      function: get
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                      line: 36
+                      function: handle
+                      class: Knuckles\Scribe\Commands\GenerateDocumentation
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\Util.php'
+                      line: 41
+                      function: 'Illuminate\Container\{closure}'
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                      line: 93
+                      function: unwrapIfClosure
+                      class: Illuminate\Container\Util
+                      type: '::'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                      line: 37
+                      function: callBoundMethod
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\Container.php'
+                      line: 651
+                      function: call
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Console\Command.php'
+                      line: 182
+                      function: call
+                      class: Illuminate\Container\Container
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\symfony\console\Command\Command.php'
+                      line: 312
+                      function: execute
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Console\Command.php'
+                      line: 152
+                      function: run
+                      class: Symfony\Component\Console\Command\Command
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\symfony\console\Application.php'
+                      line: 1020
+                      function: run
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\symfony\console\Application.php'
+                      line: 312
+                      function: doRunCommand
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\symfony\console\Application.php'
+                      line: 168
+                      function: doRun
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Console\Application.php'
+                      line: 102
+                      function: run
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php'
+                      line: 155
+                      function: run
+                      class: Illuminate\Console\Application
+                      type: '->'
+                    -
+                      file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\artisan'
+                      line: 37
+                      function: handle
+                      class: Illuminate\Foundation\Console\Kernel
+                      type: '->'
+                properties:
+                  message:
+                    type: string
+                    example: 'No query results for model [App\Models\Customer] 16'
+                  exception:
+                    type: string
+                    example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                  file:
+                    type: string
+                    example: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php'
+                  line:
+                    type: integer
+                    example: 391
+                  trace:
+                    type: array
+                    example:
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php'
+                        line: 367
+                        function: prepareException
+                        class: Illuminate\Foundation\Exceptions\Handler
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\nunomaduro\collision\src\Adapters\Laravel\ExceptionHandler.php'
+                        line: 54
+                        function: render
+                        class: Illuminate\Foundation\Exceptions\Handler
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php'
+                        line: 51
+                        function: render
+                        class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 185
+                        function: handleException
+                        class: Illuminate\Routing\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                        line: 126
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                        line: 102
+                        function: handleRequest
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                        line: 54
+                        function: handleRequestUsingNamedLimiter
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 180
+                        function: handle
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 799
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 776
+                        function: runRouteWithinStack
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 740
+                        function: runRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 729
+                        function: dispatchToRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                        line: 190
+                        function: dispatch
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 141
+                        function: 'Illuminate\Foundation\Http\{closure}'
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php'
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php'
+                        line: 31
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php'
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php'
+                        line: 40
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php'
+                        line: 27
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php'
+                        line: 86
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Http\Middleware\HandleCors.php'
+                        line: 62
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 180
+                        function: handle
+                        class: Illuminate\Http\Middleware\HandleCors
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Http\Middleware\TrustProxies.php'
+                        line: 39
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 180
+                        function: handle
+                        class: Illuminate\Http\Middleware\TrustProxies
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                        line: 165
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                        line: 134
+                        function: sendRequestThroughRouter
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 299
+                        function: handle
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 287
+                        function: callLaravelOrLumenRoute
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 92
+                        function: makeApiCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 45
+                        function: makeResponseCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 35
+                        function: makeResponseCallIfConditionsPass
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                        line: 209
+                        function: __invoke
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                        line: 166
+                        function: iterateThroughStrategies
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                        line: 95
+                        function: fetchResponses
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                        line: 124
+                        function: processRoute
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                        line: 71
+                        function: extractEndpointsInfoFromLaravelApp
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                        line: 49
+                        function: extractEndpointsInfoAndWriteToDisk
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php'
+                        line: 51
+                        function: get
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                        line: 36
+                        function: handle
+                        class: Knuckles\Scribe\Commands\GenerateDocumentation
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\Util.php'
+                        line: 41
+                        function: 'Illuminate\Container\{closure}'
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                        line: 93
+                        function: unwrapIfClosure
+                        class: Illuminate\Container\Util
+                        type: '::'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                        line: 37
+                        function: callBoundMethod
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Container\Container.php'
+                        line: 651
+                        function: call
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Console\Command.php'
+                        line: 182
+                        function: call
+                        class: Illuminate\Container\Container
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\symfony\console\Command\Command.php'
+                        line: 312
+                        function: execute
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Console\Command.php'
+                        line: 152
+                        function: run
+                        class: Symfony\Component\Console\Command\Command
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\symfony\console\Application.php'
+                        line: 1020
+                        function: run
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\symfony\console\Application.php'
+                        line: 312
+                        function: doRunCommand
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\symfony\console\Application.php'
+                        line: 168
+                        function: doRun
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Console\Application.php'
+                        line: 102
+                        function: run
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php'
+                        line: 155
+                        function: run
+                        class: Illuminate\Console\Application
+                        type: '->'
+                      -
+                        file: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\artisan'
+                        line: 37
+                        function: handle
+                        class: Illuminate\Foundation\Console\Kernel
+                        type: '->'
+                    items:
+                      type: object
+                      properties:
+                        file:
+                          type: string
+                          example: 'D:\Workspace\UIT\SE104_CoffeeShop_BE\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php'
+                        line:
+                          type: integer
+                          example: 367
+                        function:
+                          type: string
+                          example: prepareException
+                        class:
+                          type: string
+                          example: Illuminate\Foundation\Exceptions\Handler
+                        type:
+                          type: string
+                          example: '->'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: customer_id
+        description: 'The ID of the customer.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/vouchers:
+    get:
+      summary: ''
+      operationId: getApiVouchers
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 1
+                      voucher_code: GIAMGIA10K
+                      type: direct
+                      amount: 10000
+                      quantity: 999
+                      start_date: '2023-09-28 00:00:00'
+                      end_date: '2025-01-01 00:00:00'
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                    -
+                      id: 2
+                      voucher_code: GIAMGIA50%
+                      type: percent
+                      amount: 50
+                      quantity: 999
+                      start_date: '2023-09-28 00:00:00'
+                      end_date: '2025-01-01 00:00:00'
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                    -
+                      id: 3
+                      voucher_code: GIAMGIA5K
+                      type: direct
+                      amount: 5000
+                      quantity: 0
+                      start_date: '2023-09-28 00:00:00'
+                      end_date: '2025-01-01 00:00:00'
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:17.000000Z'
+                  first_page_url: 'http://localhost/api/vouchers?page=1'
+                  from: 1
+                  last_page: 1
+                  last_page_url: 'http://localhost/api/vouchers?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://localhost/api/vouchers?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://localhost/api/vouchers'
+                  per_page: 15
+                  prev_page_url: null
+                  to: 3
+                  total: 3
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        voucher_code: GIAMGIA10K
+                        type: direct
+                        amount: 10000
+                        quantity: 999
+                        start_date: '2023-09-28 00:00:00'
+                        end_date: '2025-01-01 00:00:00'
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                      -
+                        id: 2
+                        voucher_code: GIAMGIA50%
+                        type: percent
+                        amount: 50
+                        quantity: 999
+                        start_date: '2023-09-28 00:00:00'
+                        end_date: '2025-01-01 00:00:00'
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                      -
+                        id: 3
+                        voucher_code: GIAMGIA5K
+                        type: direct
+                        amount: 5000
+                        quantity: 0
+                        start_date: '2023-09-28 00:00:00'
+                        end_date: '2025-01-01 00:00:00'
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:17.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        voucher_code:
+                          type: string
+                          example: GIAMGIA10K
+                        type:
+                          type: string
+                          example: direct
+                        amount:
+                          type: integer
+                          example: 10000
+                        quantity:
+                          type: integer
+                          example: 999
+                        start_date:
+                          type: string
+                          example: '2023-09-28 00:00:00'
+                        end_date:
+                          type: string
+                          example: '2025-01-01 00:00:00'
+                        created_at:
+                          type: string
+                          example: '2023-11-28T08:45:02.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-11-28T08:45:02.000000Z'
+                  first_page_url:
+                    type: string
+                    example: 'http://localhost/api/vouchers?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://localhost/api/vouchers?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/vouchers?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://localhost/api/vouchers'
+                  per_page:
+                    type: integer
+                    example: 15
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 3
+                  total:
+                    type: integer
+                    example: 3
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiVouchers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiVouchers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiVouchers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/vouchers/{voucher_id}':
+    get:
+      summary: ''
+      operationId: getApiVouchersVoucher_id
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  voucher_code: GIAMGIA10K
+                  type: direct
+                  amount: 10000
+                  quantity: 999
+                  start_date: '2023-09-28 00:00:00'
+                  end_date: '2025-01-01 00:00:00'
+                  created_at: '2023-11-28T08:45:02.000000Z'
+                  updated_at: '2023-11-28T08:45:02.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  voucher_code:
+                    type: string
+                    example: GIAMGIA10K
+                  type:
+                    type: string
+                    example: direct
+                  amount:
+                    type: integer
+                    example: 10000
+                  quantity:
+                    type: integer
+                    example: 999
+                  start_date:
+                    type: string
+                    example: '2023-09-28 00:00:00'
+                  end_date:
+                    type: string
+                    example: '2025-01-01 00:00:00'
+                  created_at:
+                    type: string
+                    example: '2023-11-28T08:45:02.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2023-11-28T08:45:02.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: voucher_id
+        description: 'The ID of the voucher.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/invoices:
+    get:
+      summary: ''
+      operationId: getApiInvoices
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 1
+                      user_id: 1
+                      customer_id: 1
+                      table_number: 1
+                      voucher_code: GIAMGIA5K
+                      note: null
+                      total_price: 105000
+                      discount_price: 5000
+                      final_price: 100000
+                      status: finish
+                      created_at: '2023-11-28T08:45:16.000000Z'
+                      updated_at: '2023-11-28T13:08:12.000000Z'
+                    -
+                      id: 2
+                      user_id: 1
+                      customer_id: 1
+                      table_number: 1
+                      voucher_code: GIAMGIA5K
+                      note: null
+                      total_price: 105000
+                      discount_price: 5000
+                      final_price: 100000
+                      status: pending
+                      created_at: '2023-11-28T08:45:17.000000Z'
+                      updated_at: '2023-11-28T08:45:17.000000Z'
+                  first_page_url: 'http://localhost/api/invoices?page=1'
+                  from: 1
+                  last_page: 1
+                  last_page_url: 'http://localhost/api/invoices?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://localhost/api/invoices?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://localhost/api/invoices'
+                  per_page: 15
+                  prev_page_url: null
+                  to: 2
+                  total: 2
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        user_id: 1
+                        customer_id: 1
+                        table_number: 1
+                        voucher_code: GIAMGIA5K
+                        note: null
+                        total_price: 105000
+                        discount_price: 5000
+                        final_price: 100000
+                        status: finish
+                        created_at: '2023-11-28T08:45:16.000000Z'
+                        updated_at: '2023-11-28T13:08:12.000000Z'
+                      -
+                        id: 2
+                        user_id: 1
+                        customer_id: 1
+                        table_number: 1
+                        voucher_code: GIAMGIA5K
+                        note: null
+                        total_price: 105000
+                        discount_price: 5000
+                        final_price: 100000
+                        status: pending
+                        created_at: '2023-11-28T08:45:17.000000Z'
+                        updated_at: '2023-11-28T08:45:17.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        user_id:
+                          type: integer
+                          example: 1
+                        customer_id:
+                          type: integer
+                          example: 1
+                        table_number:
+                          type: integer
+                          example: 1
+                        voucher_code:
+                          type: string
+                          example: GIAMGIA5K
+                        note:
+                          type: string
+                          example: null
+                        total_price:
+                          type: integer
+                          example: 105000
+                        discount_price:
+                          type: integer
+                          example: 5000
+                        final_price:
+                          type: integer
+                          example: 100000
+                        status:
+                          type: string
+                          example: finish
+                        created_at:
+                          type: string
+                          example: '2023-11-28T08:45:16.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-11-28T13:08:12.000000Z'
+                  first_page_url:
+                    type: string
+                    example: 'http://localhost/api/invoices?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://localhost/api/invoices?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/invoices?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://localhost/api/invoices'
+                  per_page:
+                    type: integer
+                    example: 15
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 2
+                  total:
+                    type: integer
+                    example: 2
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiInvoices
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiInvoices
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/invoices/checkout:
+    post:
+      summary: ''
+      operationId: postApiInvoicesCheckout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cart:
+                  type: array
+                  description: ''
+                  example:
+                    - nam
+                  items:
+                    type: number
+                voucher_code:
+                  type: string
+                  description: ''
+                  example: nulla
+              required:
+                - cart
+      security: []
+  '/api/invoices/{invoice_id}':
+    get:
+      summary: ''
+      operationId: getApiInvoicesInvoice_id
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  user_id: 1
+                  customer_id: 1
+                  table_number: 1
+                  voucher_code: GIAMGIA5K
+                  note: null
+                  total_price: 105000
+                  discount_price: 5000
+                  final_price: 100000
+                  status: finish
+                  created_at: '2023-11-28T08:45:16.000000Z'
+                  updated_at: '2023-11-28T13:08:12.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  user_id:
+                    type: integer
+                    example: 1
+                  customer_id:
+                    type: integer
+                    example: 1
+                  table_number:
+                    type: integer
+                    example: 1
+                  voucher_code:
+                    type: string
+                    example: GIAMGIA5K
+                  note:
+                    type: string
+                    example: null
+                  total_price:
+                    type: integer
+                    example: 105000
+                  discount_price:
+                    type: integer
+                    example: 5000
+                  final_price:
+                    type: integer
+                    example: 100000
+                  status:
+                    type: string
+                    example: finish
+                  created_at:
+                    type: string
+                    example: '2023-11-28T08:45:16.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2023-11-28T13:08:12.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: invoice_id
+        description: 'The ID of the invoice.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/staffs:
+    get:
+      summary: ''
+      operationId: getApiStaffs
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 2
+                      name: 'Anita Tromp'
+                      email: micaela.eichmann@example.net
+                      email_verified_at: '2023-11-28T08:45:01.000000Z'
+                      role: 0
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                    -
+                      id: 3
+                      name: 'Louisa Champlin'
+                      email: joshua99@example.net
+                      email_verified_at: '2023-11-28T08:45:01.000000Z'
+                      role: 0
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                    -
+                      id: 4
+                      name: 'Lavina McGlynn'
+                      email: heathcote.raoul@example.org
+                      email_verified_at: '2023-11-28T08:45:02.000000Z'
+                      role: 0
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                    -
+                      id: 5
+                      name: 'Odell Stokes'
+                      email: eudora77@example.net
+                      email_verified_at: '2023-11-28T08:45:02.000000Z'
+                      role: 0
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                    -
+                      id: 6
+                      name: 'Ms. Lysanne Romaguera II'
+                      email: celestine.donnelly@example.org
+                      email_verified_at: '2023-11-28T08:45:02.000000Z'
+                      role: 0
+                      created_at: '2023-11-28T08:45:02.000000Z'
+                      updated_at: '2023-11-28T08:45:02.000000Z'
+                  first_page_url: 'http://localhost/api/staffs?page=1'
+                  from: 1
+                  last_page: 1
+                  last_page_url: 'http://localhost/api/staffs?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://localhost/api/staffs?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://localhost/api/staffs'
+                  per_page: 15
+                  prev_page_url: null
+                  to: 5
+                  total: 5
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 2
+                        name: 'Anita Tromp'
+                        email: micaela.eichmann@example.net
+                        email_verified_at: '2023-11-28T08:45:01.000000Z'
+                        role: 0
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                      -
+                        id: 3
+                        name: 'Louisa Champlin'
+                        email: joshua99@example.net
+                        email_verified_at: '2023-11-28T08:45:01.000000Z'
+                        role: 0
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                      -
+                        id: 4
+                        name: 'Lavina McGlynn'
+                        email: heathcote.raoul@example.org
+                        email_verified_at: '2023-11-28T08:45:02.000000Z'
+                        role: 0
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                      -
+                        id: 5
+                        name: 'Odell Stokes'
+                        email: eudora77@example.net
+                        email_verified_at: '2023-11-28T08:45:02.000000Z'
+                        role: 0
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                      -
+                        id: 6
+                        name: 'Ms. Lysanne Romaguera II'
+                        email: celestine.donnelly@example.org
+                        email_verified_at: '2023-11-28T08:45:02.000000Z'
+                        role: 0
+                        created_at: '2023-11-28T08:45:02.000000Z'
+                        updated_at: '2023-11-28T08:45:02.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 2
+                        name:
+                          type: string
+                          example: 'Anita Tromp'
+                        email:
+                          type: string
+                          example: micaela.eichmann@example.net
+                        email_verified_at:
+                          type: string
+                          example: '2023-11-28T08:45:01.000000Z'
+                        role:
+                          type: integer
+                          example: 0
+                        created_at:
+                          type: string
+                          example: '2023-11-28T08:45:02.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-11-28T08:45:02.000000Z'
+                  first_page_url:
+                    type: string
+                    example: 'http://localhost/api/staffs?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://localhost/api/staffs?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/staffs?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://localhost/api/staffs'
+                  per_page:
+                    type: integer
+                    example: 15
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 5
+                  total:
+                    type: integer
+                    example: 5
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiStaffs
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiStaffs
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/staffs/{staff_id}':
+    get:
+      summary: ''
+      operationId: getApiStaffsStaff_id
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  name: 'Zero Nine'
+                  email: trinhduongngoctran@gmail.com
+                  email_verified_at: '2023-11-28T08:45:01.000000Z'
+                  role: 1
+                  created_at: null
+                  updated_at: null
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: 'Zero Nine'
+                  email:
+                    type: string
+                    example: trinhduongngoctran@gmail.com
+                  email_verified_at:
+                    type: string
+                    example: '2023-11-28T08:45:01.000000Z'
+                  role:
+                    type: integer
+                    example: 1
+                  created_at:
+                    type: string
+                    example: null
+                  updated_at:
+                    type: string
+                    example: null
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: staff_id
+        description: 'The ID of the staff.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/invoices-pending:
+    get:
+      summary: ''
+      operationId: getApiInvoicesPending
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 2
+                      user_id: 1
+                      customer_id: 1
+                      table_number: 1
+                      voucher_code: GIAMGIA5K
+                      note: null
+                      total_price: 105000
+                      discount_price: 5000
+                      final_price: 100000
+                      status: pending
+                      created_at: '2023-11-28T08:45:17.000000Z'
+                      updated_at: '2023-11-28T08:45:17.000000Z'
+                  first_page_url: 'http://localhost/api/invoices-pending?page=1'
+                  from: 1
+                  last_page: 1
+                  last_page_url: 'http://localhost/api/invoices-pending?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://localhost/api/invoices-pending?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://localhost/api/invoices-pending'
+                  per_page: 15
+                  prev_page_url: null
+                  to: 1
+                  total: 1
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 2
+                        user_id: 1
+                        customer_id: 1
+                        table_number: 1
+                        voucher_code: GIAMGIA5K
+                        note: null
+                        total_price: 105000
+                        discount_price: 5000
+                        final_price: 100000
+                        status: pending
+                        created_at: '2023-11-28T08:45:17.000000Z'
+                        updated_at: '2023-11-28T08:45:17.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 2
+                        user_id:
+                          type: integer
+                          example: 1
+                        customer_id:
+                          type: integer
+                          example: 1
+                        table_number:
+                          type: integer
+                          example: 1
+                        voucher_code:
+                          type: string
+                          example: GIAMGIA5K
+                        note:
+                          type: string
+                          example: null
+                        total_price:
+                          type: integer
+                          example: 105000
+                        discount_price:
+                          type: integer
+                          example: 5000
+                        final_price:
+                          type: integer
+                          example: 100000
+                        status:
+                          type: string
+                          example: pending
+                        created_at:
+                          type: string
+                          example: '2023-11-28T08:45:17.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-11-28T08:45:17.000000Z'
+                  first_page_url:
+                    type: string
+                    example: 'http://localhost/api/invoices-pending?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://localhost/api/invoices-pending?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/invoices-pending?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://localhost/api/invoices-pending'
+                  per_page:
+                    type: integer
+                    example: 15
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 1
+                  total:
+                    type: integer
+                    example: 1
+      tags:
+        - Endpoints
+      security: []
+  '/api/invoices-finish/{invoice_id}':
+    post:
+      summary: ''
+      operationId: postApiInvoicesFinishInvoice_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: invoice_id
+        description: 'The ID of the invoice.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/invoices-undo/{invoice_id}':
+    post:
+      summary: ''
+      operationId: postApiInvoicesUndoInvoice_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: invoice_id
+        description: 'The ID of the invoice.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/vouchers/verify:
+    post:
+      summary: ''
+      operationId: postApiVouchersVerify
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                voucher_code:
+                  type: string
+                  description: ''
+                  example: vel
+              required:
+                - voucher_code
+      security: []
+  /api/v1/signup:
+    post:
+      summary: ''
+      operationId: postApiV1Signup
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: quisquam
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: dortha.miller@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: non
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/v1/login:
+    post:
+      summary: ''
+      operationId: postApiV1Login
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: wisozk.seamus@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: possimus
+                remember:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - email
+                - password
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
