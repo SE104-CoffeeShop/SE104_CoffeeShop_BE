@@ -16,17 +16,17 @@ class StaffController extends Controller
     public function store(Request $request) {
         $staff = User::create($request->all());
 
-        return response(json_encode($staff), 201);
+        return response()->json($staff)->setStatusCode(201);
     }
 
     public function update(Request $request, User $staff) {
         $staff->update($request->all());
 
-        return response(json_encode($staff), 200);
+        return response()->json($staff);
     }
 
     public function show(User $staff) {
-        return response(json_encode($staff), 200);
+        return response()->json($staff);
     }
 
     public function destroy(User $staff) {

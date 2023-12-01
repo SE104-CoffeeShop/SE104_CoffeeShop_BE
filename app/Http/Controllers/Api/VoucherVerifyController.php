@@ -27,7 +27,7 @@ class VoucherVerifyController extends Controller
                 'message' => 'Voucher khong ton tai',
             ];
 
-            return response($data, 200);
+            return response()->json($data);
         }
 
         if ($quantity < 1) {
@@ -38,7 +38,7 @@ class VoucherVerifyController extends Controller
                 'message' => 'Voucher nay da het luot su dung',
             ];
 
-            return response($data, 200);
+            return response()->json($data);
         }
 
         $data = [
@@ -48,6 +48,6 @@ class VoucherVerifyController extends Controller
             'message' => 'Verify voucher thanh cong',
         ];
 
-        return response($data, 200);
+        return response()->json($data);
     }
 }
