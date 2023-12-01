@@ -12,7 +12,9 @@ class CheckoutInvoiceRequest extends FormRequest
             'cart' => 'required|array',
             'cart.*.product_id' => 'required|numeric',
             'cart.*.quantity' => 'required|numeric',
-            'voucher_code' => 'nullable|string'
+            'voucher_code' => 'nullable|string',
+            'customer_phone_number' => 'nullable|string',
+            'table_number' => 'required|numeric',
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CheckoutInvoiceRequest;
+use App\Models\Customer;
 use App\Models\Invoice;
 use App\Services\CartService;
 use App\Services\VoucherService;
@@ -19,6 +20,8 @@ class InvoiceController extends Controller
     public function store(CheckoutInvoiceRequest $request) {
         $cart = $request->input('cart');
         $voucherCode = $request->input('voucher_code');
+        $customerPhoneNumber = $request->input('customer_phone_number');
+        $tableNumber = $request->input('table_number');
 
         if ($voucherCode) {
             [
@@ -40,10 +43,12 @@ class InvoiceController extends Controller
             $totalPrice = CartService::calculateCart($cart);
             [$discountPrice, $finalPrice] = CartService::applyVoucher($totalPrice, $voucherType, $voucherAmount);
 
+            $customer = Customer::where('phone_number', $customerPhoneNumber)->first();
+
             $invoice = Invoice::create([
                 'user_id' => 1, //TODO
-                'customer_id' => 1,
-                'table_number' => 1,
+                'customer_id' => $customer->id,
+                'table_number' => $tableNumber,
                 'voucher_code' => $voucherCode,
                 'note' => null,
                 'total_price' => $totalPrice,
@@ -58,11 +63,12 @@ class InvoiceController extends Controller
             ]);
         } else {
             $totalPrice = CartService::calculateCart($cart);
+            $customer = Customer::where('phone_number', $customerPhoneNumber)->first();
 
             $invoice = Invoice::create([
                 'user_id' => 1, //TODO
-                'customer_id' => 1,
-                'table_number' => 1,
+                'customer_id' => $customer->id,
+                'table_number' => $tableNumber,
                 'voucher_code' => null,
                 'note' => null,
                 'total_price' => $totalPrice,
