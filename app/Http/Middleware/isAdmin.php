@@ -20,7 +20,7 @@ class isAdmin
         $user = $request->user();
 
         if ($user->role != '1') {
-            return response('Ban khong phai la admin', 200);
+            return response('Ban khong phai la admin', 401);
         }
         return $next($request);
     }
