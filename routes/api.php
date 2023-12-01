@@ -29,7 +29,7 @@ Route::get('/customers/{customer}', [\App\Http\Controllers\Api\CustomerControlle
 
 
 Route::get('/vouchers', [\App\Http\Controllers\Api\VoucherController::class, 'index']);
-Route::post('/vouchers', [\App\Http\Controllers\Api\VoucherController::class, 'create']);
+Route::post('/vouchers', [\App\Http\Controllers\Api\VoucherController::class, 'store']);
 Route::put('/vouchers', [\App\Http\Controllers\Api\VoucherController::class, 'update']);
 Route::delete('/vouchers', [\App\Http\Controllers\Api\VoucherController::class, 'destroy']);
 Route::get('/vouchers/{voucher}', [\App\Http\Controllers\Api\VoucherController::class, 'show']);
@@ -51,23 +51,23 @@ Route::get('/staffs/{staff}', [\App\Http\Controllers\Api\StaffController::class,
 
 /* end test */
 Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
-Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'create']);
-Route::get('/invoices/pending', [\App\Http\Controllers\Api\InvoiceController::class, 'getPending']);
+Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'store']);
+Route::get('/invoices-pending', [\App\Http\Controllers\Api\InvoiceController::class, 'getPending']);
 
-Route::patch('/invoices/{invoice}/finish', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'finish']);
-Route::patch('/invoices/{invoice}/undo', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'undo']);
+Route::post('/invoices-finish/{invoice}', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'finish']);
+Route::post('/invoices-undo/{invoice}', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'undo']);
 
 Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
-Route::post('/invoices/checkout', [\App\Http\Controllers\Api\InvoiceCheckoutController::class, '__invoke']);
+Route::post('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'store']);
 
 Route::prefix('/v1')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout']);
-
-    Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
-    Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'create']);
-    Route::get('/invoices/pending', [\App\Http\Controllers\Api\InvoiceController::class, 'getPending']);
-    Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
-    Route::post('/invoices/checkout', [\App\Http\Controllers\Api\InvoiceController::class, 'checkout']);
+//    Route::post('/logout', [AuthController::class, 'logout']);
+//
+//    Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
+//    Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'create']);
+//    Route::get('/invoices/pending', [\App\Http\Controllers\Api\InvoiceController::class, 'getPending']);
+//    Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
+//    Route::post('/invoices/checkout', [\App\Http\Controllers\Api\InvoiceController::class, 'checkout']);
 
 
 
