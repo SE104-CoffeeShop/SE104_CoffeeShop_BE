@@ -37,7 +37,7 @@ Route::get('/vouchers/{voucher}', [\App\Http\Controllers\Api\VoucherController::
 
 
 Route::get('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'index']);
-Route::post('/invoices/checkout', [\App\Http\Controllers\Api\InvoiceCheckoutController::class, '__invoke']);
+Route::post('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'store']);
 Route::put('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'update']);
 Route::delete('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'destroy']);
 Route::get('/invoices/{invoice}', [\App\Http\Controllers\Api\InvoiceController::class, 'show']);
@@ -58,7 +58,6 @@ Route::post('/invoices-finish/{invoice}', [\App\Http\Controllers\Api\InvoiceStat
 Route::post('/invoices-undo/{invoice}', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'undo']);
 
 Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
-Route::post('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'store']);
 
 Route::prefix('/v1')->group(function () {
 //    Route::post('/logout', [AuthController::class, 'logout']);

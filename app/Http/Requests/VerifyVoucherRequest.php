@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class VerifyVoucherRequest extends FormRequest
+class VerifyVoucherRequest extends ApiFormRequest
 {
     public function rules()
     {
