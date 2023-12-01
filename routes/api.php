@@ -50,7 +50,6 @@ Route::delete('/staffs', [\App\Http\Controllers\Api\StaffController::class, 'des
 Route::get('/staffs/{staff}', [\App\Http\Controllers\Api\StaffController::class, 'show']);
 
 /* end test */
-Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
 Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'store']);
 Route::get('/invoices-pending', [\App\Http\Controllers\Api\InvoiceController::class, 'getPending']);
 
@@ -60,13 +59,19 @@ Route::post('/invoices-undo/{invoice}', [\App\Http\Controllers\Api\InvoiceStatus
 Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
 
 Route::prefix('/v1')->group(function () {
-//    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 //
 //    Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
 //    Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'create']);
 //    Route::get('/invoices/pending', [\App\Http\Controllers\Api\InvoiceController::class, 'getPending']);
 //    Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
 //    Route::post('/invoices/checkout', [\App\Http\Controllers\Api\InvoiceController::class, 'checkout']);
+
+    Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index'])->middleware('checkAdmin');
+    Route::post('/products', [\App\Http\Controllers\Api\ProductController::class, 'store']);
+    Route::put('/products', [\App\Http\Controllers\Api\ProductController::class, 'update']);
+    Route::delete('/products', [\App\Http\Controllers\Api\ProductController::class, 'destroy']);
+    Route::get('/products/{product}', [\App\Http\Controllers\Api\ProductController::class, 'show']);
 
 
 
