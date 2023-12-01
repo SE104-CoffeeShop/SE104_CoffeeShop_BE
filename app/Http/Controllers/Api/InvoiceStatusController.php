@@ -8,17 +8,17 @@ use Illuminate\Http\Request;
 
 class InvoiceStatusController extends Controller
 {
-    public function finish(Request $request, Invoice $invoice) {
+    public function finish(Invoice $invoice) {
         $invoice->update([
-            'pending' => 'finish',
+            'status' => 'finish',
         ]);
 
         return response('', 204);
     }
 
-    public function undo(Request $request, Invoice $invoice) {
+    public function undo(Invoice $invoice) {
         $invoice->update([
-            'pending' => 'pending',
+            'status' => 'pending',
         ]);
 
         return response('', 204);

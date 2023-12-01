@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\InvoiceDetail;
 use App\Models\Product;
 
 class CartService
@@ -43,5 +44,20 @@ class CartService
         $finalPrice = $totalPrice - $discountPrice;
 
         return [$discountPrice, $finalPrice];
+    }
+
+    public static function storeInvoiceDetail(array $cart, int $invoiceId): void
+    {
+        $data = [];
+
+        foreach ($cart as $pair) {
+            $data[] = [
+                'invoice_id' => $invoiceId,
+                'product_id' => $pair['product_id'],
+                'quantity' => $pair['quantity'],
+            ];
+        }
+
+        InvoiceDetail::insert($data);
     }
 }
