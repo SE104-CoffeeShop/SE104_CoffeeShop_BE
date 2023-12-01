@@ -19,13 +19,13 @@ return new class extends Migration
         Schema::create('customer', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('phone_number');
+            $table->string('phone_number')->unique();
             $table->timestamps();
         });
 
         Schema::create('voucher', function (Blueprint $table) {
             $table->id();
-            $table->string('voucher_code');
+            $table->string('voucher_code')->unique();
             $table->string('type');
             $table->integer('amount');
             $table->integer('quantity');

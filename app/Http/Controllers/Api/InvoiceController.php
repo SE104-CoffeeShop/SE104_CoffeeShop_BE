@@ -90,11 +90,11 @@ class InvoiceController extends Controller
     public function update(Request $request, Invoice $invoice) {
         $invoice->update($request->all());
 
-        return response(json_encode($invoice), 200);
+        return response()->json($invoice);
     }
 
     public function show(Invoice $invoice) {
-        return response(json_encode($invoice), 200);
+        return response()->json($invoice);
     }
 
     public function destroy(Invoice $invoice) {
@@ -106,6 +106,6 @@ class InvoiceController extends Controller
     public function getPending() {
         $pendingInvoices = Invoice::where('status', 'pending')->paginate();
 
-        return response(json_encode($pendingInvoices), 200);
+        return response()->json($pendingInvoices);
     }
 }

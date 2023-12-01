@@ -20,7 +20,7 @@ class CustomerController extends Controller
         return response()->json($customer)->setStatusCode(201);
     }
 
-    public function update(Request $request, Customer $customer) {
+    public function update(StoreCustomerRequest $request, Customer $customer) {
         $customer->update($request->all());
 
         return response()->json($customer);
