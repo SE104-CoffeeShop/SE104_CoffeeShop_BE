@@ -53,6 +53,31 @@ class ProductSeeder extends Seeder
                 'image' => '',
                 'unit_price' => 15000,
             ],
+            [
+                'name' => 'Test product minus unit price',
+                'image' => '',
+                'unit_price' => -15000,
+            ],
+            [
+                'name' => 'Test product double unit price',
+                'image' => '',
+                'unit_price' => 24000.1,
+            ],
+            [
+                'name' => 'Test product very expensive price',
+                'image' => '',
+                'unit_price' => 9999999999,
+            ],
+            [
+                'name' => '',
+                'image' => '',
+                'unit_price' => 10000,
+            ],
+            [
+                'name' => 'Test product with no unit price',
+                'image' => '',
+                'unit_price' => '',
+            ],
         ];
 
         foreach ($products as $product) {
