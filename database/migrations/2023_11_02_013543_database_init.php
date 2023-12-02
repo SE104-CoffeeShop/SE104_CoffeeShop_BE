@@ -27,8 +27,8 @@ return new class extends Migration
             $table->id();
             $table->string('voucher_code')->unique();
             $table->string('type');
-            $table->integer('amount');
-            $table->integer('quantity');
+            $table->unsignedInteger('amount');
+            $table->unsignedInteger('quantity');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->timestamps();
@@ -36,9 +36,9 @@ return new class extends Migration
 
         Schema::create('invoice', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('customer_id')->nullable();
-            $table->integer('table_number');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('customer_id')->nullable();
+            $table->unsignedInteger('table_number');
             $table->string('voucher_code')->nullable();
             $table->text('note')->nullable();
             $table->float('total_price');
@@ -50,9 +50,9 @@ return new class extends Migration
 
         Schema::create('invoice_detail', function (Blueprint $table) {
             $table->id();
-            $table->integer('invoice_id');
-            $table->integer('product_id');
-            $table->integer('quantity');
+            $table->unsignedInteger('invoice_id');
+            $table->unsignedInteger('product_id');
+            $table->unsignedInteger('quantity');
             $table->timestamps();
         });
     }

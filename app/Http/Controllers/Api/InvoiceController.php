@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 class InvoiceController extends Controller
 {
     public function index() {
-        $invoices = Invoice::paginate();
+        $invoices = Invoice::with('invoiceDetails')->paginate();
         return response()->json($invoices);
     }
 
@@ -96,7 +96,8 @@ class InvoiceController extends Controller
     }
 
     public function show(Invoice $invoice) {
-        return response()->json($invoice);
+        $data = collect([$invoice, $invoice->invoiceDetails]);
+        return response()->json($data);
     }
 
     public function destroy(Invoice $invoice) {
