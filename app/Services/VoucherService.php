@@ -14,6 +14,7 @@ class VoucherService
                 'isAvailable' => false,
                 'voucherType' => null,
                 'voucherAmount' => null,
+                'quantity' => null,
                 'voucher' => null,
             ];
 
