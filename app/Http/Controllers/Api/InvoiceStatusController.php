@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Invoice;
-use Illuminate\Http\Request;
 
 class InvoiceStatusController extends Controller
 {
-    public function finish(Invoice $invoice) {
+    public function finish(Invoice $invoice)
+    {
         $invoice->update([
             'status' => 'finish',
         ]);
@@ -16,7 +16,8 @@ class InvoiceStatusController extends Controller
         return response('', 200);
     }
 
-    public function undo(Invoice $invoice) {
+    public function undo(Invoice $invoice)
+    {
         $invoice->update([
             'status' => 'pending',
         ]);

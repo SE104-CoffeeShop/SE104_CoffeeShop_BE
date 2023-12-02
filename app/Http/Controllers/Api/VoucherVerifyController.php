@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VerifyVoucherRequest;
-use App\Models\Voucher;
 use App\Services\VoucherService;
 
 class VoucherVerifyController extends Controller
 {
-    public function __invoke(VerifyVoucherRequest $request) {
+    public function __invoke(VerifyVoucherRequest $request)
+    {
         $voucherCode = $request->get('voucher_code');
 
         [
