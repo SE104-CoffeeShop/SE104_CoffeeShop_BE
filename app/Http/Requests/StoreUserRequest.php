@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
 class StoreUserRequest extends ApiFormRequest
@@ -17,7 +16,7 @@ class StoreUserRequest extends ApiFormRequest
                 Password::min(8)
                     ->letters()
                     ->symbols(),
-            ]
+            ],
         ];
     }
 }
