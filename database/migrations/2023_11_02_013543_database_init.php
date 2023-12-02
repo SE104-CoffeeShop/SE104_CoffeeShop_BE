@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('image')->nullable();
-            $table->integer('unit_price');
+            $table->unsignedInteger('unit_price');
             $table->timestamps();
         });
 
