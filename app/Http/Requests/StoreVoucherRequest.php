@@ -9,7 +9,7 @@ class StoreVoucherRequest extends ApiFormRequest
     {
         return [
             'voucher_code' => 'required|string|unique:voucher',
-            'type' => 'required|string', Rule::in(['direct', 'percent']),
+            'type' => ['required', 'string', Rule::in(['direct', 'percent'])],
             'amount' => 'required|numeric',
             'quantity' => 'required|numeric',
             'start_date' => 'required|date',
