@@ -10,7 +10,6 @@ class isAdmin
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
@@ -22,6 +21,7 @@ class isAdmin
         if ($user->role != '1') {
             return response('Ban khong phai la admin', 401);
         }
+
         return $next($request);
     }
 }
