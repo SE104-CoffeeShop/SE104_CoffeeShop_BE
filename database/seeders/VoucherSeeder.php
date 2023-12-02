@@ -72,7 +72,7 @@ class VoucherSeeder extends Seeder
             [
                 'voucher_code' => 'TEST_VOUCHER_START_END_DATE4',
                 'type' => 'direct',
-                'amount' => 10,
+                'amount' => 100,
                 'quantity' => 10,
                 'start_date' => date('Y-m-d', strtotime('10/01/2023')),
                 'end_date' => date('Y-m-d', strtotime('12/31/2023')),
