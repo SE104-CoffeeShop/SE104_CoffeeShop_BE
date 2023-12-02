@@ -29,7 +29,15 @@ class VoucherController extends Controller
     }
 
     public function update(StoreVoucherRequest $request, Voucher $voucher) {
-        $voucher->update($request->all());
+        $startDate = date('Y-m-d', strtotime($request->input('start_date')));
+        $endDate = date('Y-m-d', strtotime($request->input('end_date')));
+
+        $data = array_merge($request->all(), [
+            'start_date' => $startDate,
+            'end_date' => $endDate,
+        ]);
+
+        $voucher->update($data);
 
         return response()->json($voucher);
     }

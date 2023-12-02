@@ -45,10 +45,9 @@ Route::prefix('/v1')->group(function () {
             Route::put('/customers/{customer}', [\App\Http\Controllers\Api\CustomerController::class, 'update']);
             Route::delete('/customers/{customer}', [\App\Http\Controllers\Api\CustomerController::class, 'destroy']);
             Route::get('/customers/{customer}', [\App\Http\Controllers\Api\CustomerController::class, 'show']);
-
-            Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
         });
 
+        Route::post('/vouchers-verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
         Route::post('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'store']);
         Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'store']);
         Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);

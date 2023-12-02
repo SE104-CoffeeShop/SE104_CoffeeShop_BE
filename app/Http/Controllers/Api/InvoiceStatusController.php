@@ -13,7 +13,7 @@ class InvoiceStatusController extends Controller
             'status' => 'finish',
         ]);
 
-        return response('', 204);
+        return response('', 200);
     }
 
     public function undo(Invoice $invoice) {
@@ -21,6 +21,6 @@ class InvoiceStatusController extends Controller
             'status' => 'pending',
         ]);
 
-        return response('', 204);
+        return response('', 200);
     }
 }

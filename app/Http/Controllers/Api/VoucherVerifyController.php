@@ -24,6 +24,7 @@ class VoucherVerifyController extends Controller
                 'is_available' => false,
                 'voucher_type' => null,
                 'voucher_amount' => null,
+                'quantity' => null,
                 'message' => 'Voucher khong ton tai',
             ];
 
