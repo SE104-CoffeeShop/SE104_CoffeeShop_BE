@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
 import { Table } from 'react-bootstrap';
 import axiosClient from "../axios-client.js";
-import {useStateContext} from "../context/ContextProvider.jsx";
+import { useStateContext } from "../context/ContextProvider.jsx";
 import Badge from "react-bootstrap/Badge";
 
-export function RequestsPage()
-{
-  const {user} = useStateContext();
+export function RequestsPage() {
+    const { user } = useStateContext();
     const [requests, setRequests] = useState([]);
 
-    useEffect(()=>{
-      axiosClient.get(`/user/forms?id=${localStorage.getItem('userId')}`)
-        .then(response => {
-          const data = response.data
+    useEffect(() => {
+        axiosClient.get(`/user/forms?id=${localStorage.getItem('userId')}`)
+            .then(response => {
+                const data = response.data
 
-          setRequests([...requests, ...data]);
-        })
+                setRequests([...requests, ...data]);
+            })
     }, []);
 
     return (
@@ -38,9 +37,9 @@ export function RequestsPage()
                             <td>{request.start_date}</td>
                             <td>{request.end_date}</td>
                             <td className="d-flex justify-content-center align-items-center h-100">
-                                { request.status === 'pending' && <Badge bg="primary">Pending</Badge> }
-                                { request.status === 'accepted' && <Badge bg="info">Accepted</Badge> }
-                                { request.status === 'reject' && <Badge bg="danger">Rejected</Badge> }
+                                {request.status === 'pending' && <Badge bg="primary">Pending</Badge>}
+                                {request.status === 'accepted' && <Badge bg="info">Accepted</Badge>}
+                                {request.status === 'reject' && <Badge bg="danger">Rejected</Badge>}
                             </td>
                         </tr>
                     );
