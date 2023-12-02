@@ -74,9 +74,29 @@ class ProductSeeder extends Seeder
                 'unit_price' => 10000,
             ],
             [
-                'name' => 'Test product with no unit price',
+                'name' => '',
                 'image' => '',
                 'unit_price' => '',
+            ],
+            [
+                'name' => 'Test product with same name but difference price',
+                'image' => '',
+                'unit_price' => 1000,
+            ],
+            [
+                'name' => 'Test product with same name but difference price',
+                'image' => '',
+                'unit_price' => 2000,
+            ],
+            [
+                'name' => 'Test product with same name and same price',
+                'image' => '',
+                'unit_price' => 3000,
+            ],
+            [
+                'name' => 'Test product with same name and same price',
+                'image' => '',
+                'unit_price' => 3000,
             ],
         ];
 
