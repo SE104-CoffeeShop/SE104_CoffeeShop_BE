@@ -9,6 +9,7 @@ use App\Models\Invoice;
 use App\Services\CartService;
 use App\Services\VoucherService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InvoiceController extends Controller
 {
@@ -22,6 +23,7 @@ class InvoiceController extends Controller
         $voucherCode = $request->input('voucher_code');
         $customerPhoneNumber = $request->input('customer_phone_number');
         $tableNumber = $request->input('table_number');
+        $staff = Auth::user();
 
         if ($voucherCode) {
             [
@@ -46,7 +48,7 @@ class InvoiceController extends Controller
             $customer = Customer::where('phone_number', $customerPhoneNumber)->first();
 
             $invoice = Invoice::create([
-                'user_id' => 1, //TODO
+                'user_id' => $staff->id, //TODO
                 'customer_id' => $customer->id,
                 'table_number' => $tableNumber,
                 'voucher_code' => $voucherCode,
@@ -66,8 +68,8 @@ class InvoiceController extends Controller
             $customer = Customer::where('phone_number', $customerPhoneNumber)->first();
 
             $invoice = Invoice::create([
-                'user_id' => 1, //TODO
-                'customer_id' => $customer->id,
+                'user_id' => $staff->id, //TODO
+                'customer_id' => $customer ? $customer->id : null,
                 'table_number' => $tableNumber,
                 'voucher_code' => null,
                 'note' => null,

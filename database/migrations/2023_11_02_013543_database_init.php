@@ -37,7 +37,7 @@ return new class extends Migration
         Schema::create('invoice', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->integer('customer_id');
+            $table->integer('customer_id')->nullable();
             $table->integer('table_number');
             $table->string('voucher_code')->nullable();
             $table->text('note')->nullable();

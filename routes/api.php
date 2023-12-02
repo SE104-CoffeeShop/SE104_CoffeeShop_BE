@@ -31,7 +31,6 @@ Route::prefix('/v1')->group(function () {
             Route::get('/staffs/{staff}', [\App\Http\Controllers\Api\StaffController::class, 'show']);
 
             Route::get('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'index']);
-            Route::post('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'store']);
             Route::put('/invoices/{invoice}', [\App\Http\Controllers\Api\InvoiceController::class, 'update']);
             Route::delete('/invoices/{invoice}', [\App\Http\Controllers\Api\InvoiceController::class, 'destroy']);
             Route::get('/invoices/{invoice}', [\App\Http\Controllers\Api\InvoiceController::class, 'show']);
@@ -50,6 +49,7 @@ Route::prefix('/v1')->group(function () {
             Route::post('/vouchers/verify', [\App\Http\Controllers\Api\VoucherVerifyController::class, '__invoke']);
         });
 
+        Route::post('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'store']);
         Route::post('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'store']);
         Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
         Route::get('/invoices-pending', [\App\Http\Controllers\Api\InvoiceController::class, 'getPending']);
