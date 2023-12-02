@@ -28,6 +28,26 @@ class ProductSeeder extends Seeder
                 'image' => '',
                 'unit_price' => 15000,
             ],
+            [
+                'name' => 'Bac siu',
+                'image' => '',
+                'unit_price' => 20000,
+            ],
+            [
+                'name' => 'Tra vai',
+                'image' => '',
+                'unit_price' => 25000,
+            ],
+            [
+                'name' => 'Sua chua',
+                'image' => '',
+                'unit_price' => 10000,
+            ],
+            [
+                'name' => 'Tra o long',
+                'image' => '',
+                'unit_price' => 23000,
+            ],
         ];
 
         foreach ($products as $product) {
