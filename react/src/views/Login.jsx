@@ -1,7 +1,7 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import axiosClient from "../axios-client.js";
-import {createRef} from "react";
-import {useStateContext} from "../context/ContextProvider.jsx";
+import { createRef } from "react";
+import { useStateContext } from "../context/ContextProvider.jsx";
 import { useState } from "react";
 
 export default function Login() {
@@ -18,7 +18,7 @@ export default function Login() {
       password: passwordRef.current.value,
     }
     axiosClient.post('/login', payload)
-      .then(({data}) => {
+      .then(({ data }) => {
         setUser(data.user)
         setToken(data.token);
         localStorage.setItem('userId', data.user.id)
@@ -43,8 +43,8 @@ export default function Login() {
             </div>
           }
 
-          <input ref={emailRef} type="email" placeholder="Email"/>
-          <input ref={passwordRef} type="password" placeholder="Password"/>
+          <input ref={emailRef} type="email" placeholder="Email" />
+          <input ref={passwordRef} type="password" placeholder="Password" />
           <button className="btn btn-block">Login</button>
           <p className="message">Not registered? <Link to="/signup">Create an account</Link></p>
         </form>
