@@ -29,7 +29,7 @@ class CartService
 
         return $totalPrice;
     }
-
+	
     public static function applyVoucher(float $totalPrice, string $voucherType, int $voucherAmount) {
         if ($voucherType == 'direct') {
             $discountPrice = $voucherAmount;
@@ -45,7 +45,7 @@ class CartService
 
         return [$discountPrice, $finalPrice];
     }
-
+	
     public static function storeInvoiceDetail(array $cart, int $invoiceId): void
     {
         $productIdList = [];

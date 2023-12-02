@@ -28,6 +28,51 @@ class ProductSeeder extends Seeder
                 'image' => '',
                 'unit_price' => 15000,
             ],
+            [
+                'name' => 'Bac siu',
+                'image' => '',
+                'unit_price' => 20000,
+            ],
+            [
+                'name' => 'Tra vai',
+                'image' => '',
+                'unit_price' => 25000,
+            ],
+            [
+                'name' => 'Sua chua',
+                'image' => '',
+                'unit_price' => 10000,
+            ],
+            [
+                'name' => 'Tra o long',
+                'image' => '',
+                'unit_price' => 23000,
+            ],
+            [
+                'name' => 'Tra lipton',
+                'image' => '',
+                'unit_price' => 15000,
+            ],
+            [
+                'name' => 'Test product with same name but difference price',
+                'image' => '',
+                'unit_price' => 1000,
+            ],
+            [
+                'name' => 'Test product with same name but difference price',
+                'image' => '',
+                'unit_price' => 2000,
+            ],
+            [
+                'name' => 'Test product with same name and same price',
+                'image' => '',
+                'unit_price' => 3000,
+            ],
+            [
+                'name' => 'Test product with same name and same price',
+                'image' => '',
+                'unit_price' => 3000,
+            ],
         ];
 
         foreach ($products as $product) {
