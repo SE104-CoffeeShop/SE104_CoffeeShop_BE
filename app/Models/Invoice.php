@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     protected $table = 'invoice';
+
     use HasFactory;
 
     protected $fillable = [
@@ -24,11 +25,13 @@ class Invoice extends Model
         'status',
     ];
 
-    public function invoiceDetails() {
+    public function invoiceDetails()
+    {
         return $this->hasMany(InvoiceDetail::class, 'invoice_id');
     }
 
-    public function voucher() {
+    public function voucher()
+    {
         return $this->hasOne(Voucher::class, 'voucher_id');
     }
 }
