@@ -6,7 +6,8 @@ use App\Models\Voucher;
 
 class VoucherService
 {
-    public static function verifyVoucher(string $voucherCode) {
+    public static function verifyVoucher(string $voucherCode)
+    {
         $voucher = Voucher::where('voucher_code', $voucherCode)->first();
 
         if ($voucher == null) {
