@@ -11,6 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     protected $table = 'users';
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -32,9 +33,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function manager() {
+    public function manager()
+    {
         return $this->belongsTo(User::class, 'manager_id');
     }
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
