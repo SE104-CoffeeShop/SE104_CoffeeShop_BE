@@ -9,7 +9,7 @@ class VerifyVoucherRequest extends ApiFormRequest
     public function rules()
     {
         return [
-            'voucher_code' => 'required',
+            'voucher_code' => 'required|string',
         ];
     }
 }
