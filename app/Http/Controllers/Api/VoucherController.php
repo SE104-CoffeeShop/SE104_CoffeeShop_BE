@@ -5,16 +5,18 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreVoucherRequest;
 use App\Models\Voucher;
-use Illuminate\Http\Request;
 
 class VoucherController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $vouchers = Voucher::paginate();
+
         return response()->json($vouchers);
     }
 
-    public function store(StoreVoucherRequest $request) {
+    public function store(StoreVoucherRequest $request)
+    {
         $startDate = date('Y-m-d', strtotime($request->input('start_date')));
         $endDate = date('Y-m-d', strtotime($request->input('end_date')));
 
@@ -28,7 +30,8 @@ class VoucherController extends Controller
         return response()->json($voucher)->setStatusCode('201');
     }
 
-    public function update(StoreVoucherRequest $request, Voucher $voucher) {
+    public function update(StoreVoucherRequest $request, Voucher $voucher)
+    {
         $startDate = date('Y-m-d', strtotime($request->input('start_date')));
         $endDate = date('Y-m-d', strtotime($request->input('end_date')));
 
@@ -42,11 +45,13 @@ class VoucherController extends Controller
         return response()->json($voucher);
     }
 
-    public function show(Voucher $voucher) {
+    public function show(Voucher $voucher)
+    {
         return response()->json($voucher);
     }
 
-    public function destroy(Voucher $voucher) {
+    public function destroy(Voucher $voucher)
+    {
         $voucher->delete();
 
         return response('', 204);
