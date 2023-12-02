@@ -48,6 +48,11 @@ class ProductSeeder extends Seeder
                 'image' => '',
                 'unit_price' => 23000,
             ],
+            [
+                'name' => 'Tra lipton',
+                'image' => '',
+                'unit_price' => 15000,
+            ],
         ];
 
         foreach ($products as $product) {
