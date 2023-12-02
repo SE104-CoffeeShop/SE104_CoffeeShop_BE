@@ -48,13 +48,24 @@ class CartService
 
     public static function storeInvoiceDetail(array $cart, int $invoiceId): void
     {
+        $productIdList = [];
+
+        foreach ($cart as $pair) {
+            $productIdList[] = $pair['product_id'];
+        }
+
+        $products = Product::whereIn('id', $productIdList)->pluck('unit_price', 'id');
+
         $data = [];
 
         foreach ($cart as $pair) {
+            $productId = $pair['product_id'];
+
             $data[] = [
                 'invoice_id' => $invoiceId,
-                'product_id' => $pair['product_id'],
+                'product_id' => $productId,
                 'quantity' => $pair['quantity'],
+                'unit_price' => $products[$productId],
             ];
         }
 

@@ -48,8 +48,8 @@ class InvoiceController extends Controller
             $customer = Customer::where('phone_number', $customerPhoneNumber)->first();
 
             $invoice = Invoice::create([
-                'user_id' => $staff->id, //TODO
-                'customer_id' => $customer->id,
+                'user_id' => $staff->id,
+                'customer_id' => $customer ? $customer->id : null,
                 'table_number' => $tableNumber,
                 'voucher_code' => $voucherCode,
                 'note' => null,
@@ -68,7 +68,7 @@ class InvoiceController extends Controller
             $customer = Customer::where('phone_number', $customerPhoneNumber)->first();
 
             $invoice = Invoice::create([
-                'user_id' => $staff->id, //TODO
+                'user_id' => $staff->id,
                 'customer_id' => $customer ? $customer->id : null,
                 'table_number' => $tableNumber,
                 'voucher_code' => null,
