@@ -58,7 +58,7 @@ export default function FormRequest() {
           <div><textarea rows="3" className="w-100" id="reason" name="reason" onChange={handleReasonInput}></textarea></div>
         </div>
         <div className="d-flex justify-content-center">
-          <button onClick={submitForm} type="button" className="btn btn-primary">Submit</button>
+          <button onClick={submitForm} type="buttonnn" className="btn btn-primary">Submit</button>
         </div>
       </form>
     </div>
