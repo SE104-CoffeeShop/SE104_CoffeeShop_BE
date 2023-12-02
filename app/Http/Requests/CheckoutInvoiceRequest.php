@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
 class CheckoutInvoiceRequest extends ApiFormRequest
 {
     public function rules()
