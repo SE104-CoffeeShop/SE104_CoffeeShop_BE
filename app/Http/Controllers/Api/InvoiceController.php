@@ -35,9 +35,13 @@ class InvoiceController extends Controller
                 'voucherAmount' => $voucherAmount,
                 'voucher' => $voucher,
                 'quantity' => $quantity,
+                'startDate' => $startDate,
+                'endDate' => $endDate,
             ] = VoucherService::verifyVoucher($voucherCode);
 
-            if (! $isVoucherAvailable || $quantity < 1) {
+            $today = date('Y-m-d H:i:s');
+
+            if (! $isVoucherAvailable || $quantity < 1 || $today > $endDate || $today < $startDate) {
                 $data = [
                     'isSuccess' => false,
                     'message' => 'Voucher khong hop le hoac da het luot su dung, vui long xoa hoac kiem tra lai',
@@ -45,6 +49,7 @@ class InvoiceController extends Controller
 
                 return response($data, 200);
             }
+
 
             $totalPrice = CartService::calculateCart($cart);
             [$discountPrice, $finalPrice] = CartService::applyVoucher($totalPrice, $voucherType, $voucherAmount);
