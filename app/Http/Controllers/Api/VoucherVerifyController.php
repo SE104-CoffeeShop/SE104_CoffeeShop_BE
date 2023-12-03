@@ -17,6 +17,8 @@ class VoucherVerifyController extends Controller
             'voucherType' => $voucherType,
             'voucherAmount' => $voucherAmount,
             'quantity' => $quantity,
+            'startDate' => $startDate,
+            'endDate' => $endDate,
         ] = VoucherService::verifyVoucher($voucherCode);
 
         if (! $isAvailable) {
@@ -37,6 +39,30 @@ class VoucherVerifyController extends Controller
                 'voucher_type' => null,
                 'voucher_amount' => null,
                 'message' => 'Voucher nay da het luot su dung',
+            ];
+
+            return response()->json($data);
+        }
+
+        $today = date('Y-m-d H:i:s');
+
+        if ($today > $endDate) {
+            $data = [
+                'is_available' => true,
+                'voucher_type' => null,
+                'voucher_amount' => null,
+                'message' => 'Voucher da het han',
+            ];
+
+            return response()->json($data);
+        }
+
+        if ($today < $startDate) {
+            $data = [
+                'is_available' => true,
+                'voucher_type' => null,
+                'voucher_amount' => null,
+                'message' => 'Voucher chua den thoi han su dung',
             ];
 
             return response()->json($data);

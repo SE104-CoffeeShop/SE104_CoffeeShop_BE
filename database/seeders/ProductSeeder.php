@@ -81,6 +81,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Nuoc khoang',
                 'image' => '',
                 'unit_price' => 10000,
+            ],
             [
                 'name' => 'Coca',
                 'image' => '',
