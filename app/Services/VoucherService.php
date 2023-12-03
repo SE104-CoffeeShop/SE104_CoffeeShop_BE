@@ -25,12 +25,16 @@ class VoucherService
         $voucherType = $voucher['type'];
         $voucherAmount = $voucher['amount'];
         $quantity = $voucher['quantity'];
+        $startDate = $voucher['start_date'];
+        $endDate = $voucher['end_date'];
 
         $data = [
             'isAvailable' => true,
             'voucherType' => $voucherType,
             'voucherAmount' => $voucherAmount,
             'quantity' => $quantity,
+            'startDate' => $startDate,
+            'endDate' => $endDate,
             'voucher' => $voucher,
         ];
 

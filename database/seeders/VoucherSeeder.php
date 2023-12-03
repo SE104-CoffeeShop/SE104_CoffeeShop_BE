@@ -45,36 +45,12 @@ class VoucherSeeder extends Seeder
                 'end_date' => date('Y-m-d', strtotime('11/11/2023')),
             ],
             [
-                'voucher_code' => 'TEST_VOUCHER_START_END_DATE1',
-                'type' => 'direct',
-                'amount' => 10,
-                'quantity' => 10,
-                'start_date' => date('Y-m-d', strtotime('01/01/2021')),
-                'end_date' => date('Y-m-d', strtotime('10/01/2023')),
-            ],
-            [
-                'voucher_code' => 'TEST_VOUCHER_START_END_DATE2',
-                'type' => 'direct',
-                'amount' => 10,
-                'quantity' => 10,
-                'start_date' => date('Y-m-d', strtotime('01/01/2021')),
-                'end_date' => date('Y-m-d', strtotime('10/01/2023')),
-            ],
-            [
-                'voucher_code' => 'TEST_VOUCHER_START_END_DATE3',
-                'type' => 'direct',
-                'amount' => 10,
-                'quantity' => 10,
-                'start_date' => date('Y-m-d', strtotime('01/01/2021')),
-                'end_date' => date('Y-m-d', strtotime('10/01/2023')),
-            ],
-            [
                 'voucher_code' => 'TEST_VOUCHER_START_END_DATE4',
                 'type' => 'direct',
                 'amount' => 100,
                 'quantity' => 10,
-                'start_date' => date('Y-m-d', strtotime('10/01/2023')),
-                'end_date' => date('Y-m-d', strtotime('12/31/2023')),
+                'start_date' => date('Y-m-d', strtotime('10/01/2024')),
+                'end_date' => date('Y-m-d', strtotime('12/31/2024')),
             ],
         ];
 
