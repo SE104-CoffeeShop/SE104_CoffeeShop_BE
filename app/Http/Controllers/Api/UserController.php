@@ -23,7 +23,6 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreUserRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreUserRequest $request)
@@ -32,13 +31,12 @@ class UserController extends Controller
         $data['password'] = bcrypt($data['password']);
         $user = User::create($data);
 
-        return response(new UserResource($user) , 201);
+        return response(new UserResource($user), 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
@@ -49,8 +47,6 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\UpdateUserRequest $request
-     * @param \App\Models\User                     $user
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateUserRequest $request, User $user)
@@ -67,13 +63,12 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
     {
         $user->delete();
 
-        return response("", 204);
+        return response('', 204);
     }
 }

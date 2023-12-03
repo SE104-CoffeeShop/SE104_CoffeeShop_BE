@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ProductSeeder extends Seeder
@@ -72,6 +71,20 @@ class ProductSeeder extends Seeder
                 'name' => 'Test product with same name and same price',
                 'image' => '',
                 'unit_price' => 3000,
+            ],
+            [
+                'name' => 'Tra dao',
+                'image' => '',
+                'unit_price' => 25000,
+            ],
+            [
+                'name' => 'Nuoc khoang',
+                'image' => '',
+                'unit_price' => 10000,
+            [
+                'name' => 'Coca',
+                'image' => '',
+                'unit_price' => 15000,
             ],
         ];
 

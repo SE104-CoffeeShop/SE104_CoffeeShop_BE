@@ -5,17 +5,19 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreStaffRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class StaffController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $staffs = User::where('role', 0)->paginate();
+
         return response()->json($staffs);
     }
 
-    public function store(StoreStaffRequest $request) {
+    public function store(StoreStaffRequest $request)
+    {
         $data = [
             'name' => $request->input('name'),
             'email' => $request->input('email'),
@@ -29,17 +31,20 @@ class StaffController extends Controller
         return response()->json($staff)->setStatusCode(201);
     }
 
-    public function update(StoreStaffRequest $request, User $staff) {
+    public function update(StoreStaffRequest $request, User $staff)
+    {
         $staff->update($request->all());
 
         return response()->json($staff);
     }
 
-    public function show(User $staff) {
+    public function show(User $staff)
+    {
         return response()->json($staff);
     }
 
-    public function destroy(User $staff) {
+    public function destroy(User $staff)
+    {
         $staff->delete();
 
         return response('', 204);

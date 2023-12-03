@@ -8,14 +8,14 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public function register() :void
+    public function register(): void
     {
         $this->app->singleton(VoucherService::class, function () {
             return new VoucherService();
         });
 
         $this->app->singleton(CartService::class, function () {
-           return new CartService();
+            return new CartService();
         });
     }
 

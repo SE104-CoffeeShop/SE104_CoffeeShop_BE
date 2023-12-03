@@ -17,7 +17,7 @@ class UpdateUserRequest extends FormRequest
                 Password::min(8)
                     ->letters()
                     ->symbols(),
-            ]
+            ],
         ];
     }
 }

@@ -13,12 +13,15 @@ use Illuminate\Support\Facades\Auth;
 
 class InvoiceController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $invoices = Invoice::with('invoiceDetails')->paginate();
+
         return response()->json($invoices);
     }
 
-    public function store(CheckoutInvoiceRequest $request) {
+    public function store(CheckoutInvoiceRequest $request)
+    {
         $cart = $request->input('cart');
         $voucherCode = $request->input('voucher_code');
         $customerPhoneNumber = $request->input('customer_phone_number');
@@ -39,6 +42,7 @@ class InvoiceController extends Controller
                     'isSuccess' => false,
                     'message' => 'Voucher khong hop le hoac da het luot su dung, vui long xoa hoac kiem tra lai',
                 ];
+
                 return response($data, 200);
             }
 
@@ -89,24 +93,29 @@ class InvoiceController extends Controller
         return response($data, 200);
     }
 
-    public function update(Request $request, Invoice $invoice) {
+    public function update(Request $request, Invoice $invoice)
+    {
         $invoice->update($request->all());
 
         return response()->json($invoice);
     }
 
-    public function show(Invoice $invoice) {
+    public function show(Invoice $invoice)
+    {
         $data = collect([$invoice, $invoice->invoiceDetails]);
+
         return response()->json($data);
     }
 
-    public function destroy(Invoice $invoice) {
+    public function destroy(Invoice $invoice)
+    {
         $invoice->delete();
 
         return response('', 204);
     }
 
-    public function getPending() {
+    public function getPending()
+    {
         $pendingInvoices = Invoice::where('status', 'pending')->paginate();
 
         return response()->json($pendingInvoices);
