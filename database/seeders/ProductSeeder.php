@@ -16,76 +16,67 @@ class ProductSeeder extends Seeder
                 'name' => 'Tra da',
                 'image' => '',
                 'unit_price' => 2000,
+                'type' => 'đồ uống',
             ],
             [
                 'name' => 'Tra sua',
                 'image' => '',
                 'unit_price' => 20000,
+                'type' => 'đồ uống',
             ],
             [
                 'name' => 'Cafe den',
                 'image' => '',
                 'unit_price' => 15000,
+                'type' => 'đồ uống',
             ],
             [
                 'name' => 'Bac siu',
                 'image' => '',
                 'unit_price' => 20000,
+                'type' => 'đồ uống',
             ],
             [
                 'name' => 'Tra vai',
                 'image' => '',
                 'unit_price' => 25000,
+                'type' => 'đồ uống',
             ],
             [
                 'name' => 'Sua chua',
                 'image' => '',
                 'unit_price' => 10000,
+                'type' => 'đồ ăn',
             ],
             [
                 'name' => 'Tra o long',
                 'image' => '',
                 'unit_price' => 23000,
+                'type' => 'đồ uống',
             ],
             [
                 'name' => 'Tra lipton',
                 'image' => '',
                 'unit_price' => 15000,
-            ],
-            [
-                'name' => 'Test product with same name but difference price',
-                'image' => '',
-                'unit_price' => 1000,
-            ],
-            [
-                'name' => 'Test product with same name but difference price',
-                'image' => '',
-                'unit_price' => 2000,
-            ],
-            [
-                'name' => 'Test product with same name and same price',
-                'image' => '',
-                'unit_price' => 3000,
-            ],
-            [
-                'name' => 'Test product with same name and same price',
-                'image' => '',
-                'unit_price' => 3000,
+                'type' => 'đồ uống',
             ],
             [
                 'name' => 'Tra dao',
                 'image' => '',
                 'unit_price' => 25000,
+                'type' => 'đồ uống',
             ],
             [
                 'name' => 'Nuoc khoang',
                 'image' => '',
                 'unit_price' => 10000,
+                'type' => 'đồ uống',
             ],
             [
                 'name' => 'Coca',
                 'image' => '',
                 'unit_price' => 15000,
+                'type' => 'đồ uống',
             ],
         ];
 
