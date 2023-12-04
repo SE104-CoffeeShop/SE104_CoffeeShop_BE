@@ -8,7 +8,7 @@ class StoreProductRequest extends ApiFormRequest
     {
         return [
             'name' => 'required|string',
-            'image' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'unit_price' => 'required|integer|min:0',
         ];
     }

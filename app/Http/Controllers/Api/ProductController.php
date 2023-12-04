@@ -17,6 +17,16 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
+        $image = $request->file('image');
+        if ($image) {
+            $fileName = time() . $request->input('name') . '.' . $image->extension();
+            $storedPath = $image->move('images/products/', $fileName);
+            $data = array_merge($request->all(), ['image' => $storedPath]);
+            $product = Product::create($data);
+
+            return response()->json($product)->setStatusCode(201);
+        }
+
         $product = Product::create($request->all());
 
         return response()->json($product)->setStatusCode(201);
@@ -24,6 +34,16 @@ class ProductController extends Controller
 
     public function update(StoreProductRequest $request, Product $product)
     {
+        $image = $request->file('image');
+        if ($image) {
+            $fileName = time() . $request->input('name') . '.' . $image->extension();
+            $storedPath = $image->move('images/products/', $fileName);
+            $data = array_merge($request->all(), ['image' => $storedPath]);
+            $product->update($data);
+
+            return response()->json($product)->setStatusCode(201);
+        }
+
         $product->update($request->all());
 
         return response()->json($product);
