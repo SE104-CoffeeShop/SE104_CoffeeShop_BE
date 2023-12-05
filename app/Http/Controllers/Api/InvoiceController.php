@@ -59,6 +59,7 @@ class InvoiceController extends Controller
 
             $invoice = Invoice::create([
                 'user_id' => $staff->id,
+                'user_name' => $staff->name,
                 'customer_id' => $customer ? $customer->id : null,
                 'customer_name' => $customer ? $customer->name : null,
                 'table_number' => $tableNumber,
