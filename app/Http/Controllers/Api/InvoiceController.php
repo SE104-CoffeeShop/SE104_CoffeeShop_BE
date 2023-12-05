@@ -60,6 +60,7 @@ class InvoiceController extends Controller
             $invoice = Invoice::create([
                 'user_id' => $staff->id,
                 'customer_id' => $customer ? $customer->id : null,
+                'customer_name' => $customer ? $customer->name : null,
                 'table_number' => $tableNumber,
                 'voucher_code' => $voucherCode,
                 'note' => null,
@@ -80,6 +81,7 @@ class InvoiceController extends Controller
             $invoice = Invoice::create([
                 'user_id' => $staff->id,
                 'customer_id' => $customer ? $customer->id : null,
+                'customer_name' => $customer ? $customer->name : null,
                 'table_number' => $tableNumber,
                 'voucher_code' => null,
                 'note' => null,
