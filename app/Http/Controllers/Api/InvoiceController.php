@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CheckoutInvoiceRequest;
+use App\Http\Requests\MultipleDestroyRequest;
 use App\Models\Customer;
 use App\Models\Invoice;
 use App\Services\CartService;
@@ -117,6 +118,13 @@ class InvoiceController extends Controller
         $invoice->delete();
 
         return response('', 204);
+    }
+
+    public function destroyMultiple(MultipleDestroyRequest $request)
+    {
+        Invoice::destroy($request->ids);
+
+        return response('Deleted successfully', 204);
     }
 
     public function getPending()

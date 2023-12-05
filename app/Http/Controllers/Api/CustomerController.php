@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MultipleDestroyRequest;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Models\Customer;
 
@@ -39,5 +40,12 @@ class CustomerController extends Controller
         $customer->delete();
 
         return response('', 204);
+    }
+
+    public function destroyMultiple(MultipleDestroyRequest $request)
+    {
+        Customer::destroy($request->ids);
+
+        return response('Deleted successfully', 204);
     }
 }
