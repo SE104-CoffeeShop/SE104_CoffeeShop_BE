@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MultipleDestroyRequest;
 use App\Http\Requests\StoreProductRequest;
 use App\Models\Product;
+use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -58,6 +61,13 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return response('', 204);
+        return response('Deleted successfully', 204);
+    }
+
+    public function destroyMultiple(MultipleDestroyRequest $request)
+    {
+        Product::destroy($request->ids);
+
+        return response('Deleted successfully', 204);
     }
 }

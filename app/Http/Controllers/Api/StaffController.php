@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MultipleDestroyRequest;
 use App\Http\Requests\StoreStaffRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class StaffController extends Controller
@@ -48,5 +50,18 @@ class StaffController extends Controller
         $staff->delete();
 
         return response('', 204);
+    }
+
+    public function destroyMultiple(MultipleDestroyRequest $request)
+    {
+        $ids = $request->ids;
+
+        if (in_array(Auth::user()->id, $ids)) {
+            return response('Cannot delete yourself', 202);
+        }
+
+        User::destroy($request->ids);
+
+        return response('Deleted successfully', 204);
     }
 }

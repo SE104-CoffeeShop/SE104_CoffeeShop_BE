@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MultipleDestroyRequest;
 use App\Http\Requests\StoreVoucherRequest;
 use App\Models\Voucher;
 
@@ -55,5 +56,12 @@ class VoucherController extends Controller
         $voucher->delete();
 
         return response('', 204);
+    }
+
+    public function destroyMultiple(MultipleDestroyRequest $request)
+    {
+        Voucher::destroy($request->ids);
+
+        return response('Deleted successfully', 204);
     }
 }

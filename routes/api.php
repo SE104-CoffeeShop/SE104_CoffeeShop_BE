@@ -21,28 +21,33 @@ Route::prefix('/v1')->group(function () {
         Route::middleware(['checkAdmin'])->group(function () {
             Route::post('/products', [\App\Http\Controllers\Api\ProductController::class, 'store']);
             Route::put('/products/{product}', [\App\Http\Controllers\Api\ProductController::class, 'update']);
+            Route::delete('/products/bulk-delete', [\App\Http\Controllers\Api\ProductController::class, 'destroyMultiple']);
             Route::delete('/products/{product}', [\App\Http\Controllers\Api\ProductController::class, 'destroy']);
             Route::get('/products/{product}', [\App\Http\Controllers\Api\ProductController::class, 'show']);
 
             Route::get('/staffs', [\App\Http\Controllers\Api\StaffController::class, 'index']);
             Route::post('/staffs', [\App\Http\Controllers\Api\StaffController::class, 'store']);
             Route::put('/staffs/{staff}', [\App\Http\Controllers\Api\StaffController::class, 'update']);
+            Route::delete('/staffs/bulk-delete', [\App\Http\Controllers\Api\StaffController::class, 'destroyMultiple']);
             Route::delete('/staffs/{staff}', [\App\Http\Controllers\Api\StaffController::class, 'destroy']);
             Route::get('/staffs/{staff}', [\App\Http\Controllers\Api\StaffController::class, 'show']);
 
             Route::get('/invoices', [\App\Http\Controllers\Api\InvoiceController::class, 'index']);
             Route::put('/invoices/{invoice}', [\App\Http\Controllers\Api\InvoiceController::class, 'update']);
+            Route::delete('/invoices/bulk-delete', [\App\Http\Controllers\Api\InvoiceController::class, 'destroyMultiple']);
             Route::delete('/invoices/{invoice}', [\App\Http\Controllers\Api\InvoiceController::class, 'destroy']);
             Route::get('/invoices/{invoice}', [\App\Http\Controllers\Api\InvoiceController::class, 'show']);
 
             Route::get('/vouchers', [\App\Http\Controllers\Api\VoucherController::class, 'index']);
             Route::post('/vouchers', [\App\Http\Controllers\Api\VoucherController::class, 'store']);
             Route::put('/vouchers/{voucher}', [\App\Http\Controllers\Api\VoucherController::class, 'update']);
+            Route::delete('/vouchers/bulk-delete', [\App\Http\Controllers\Api\VoucherController::class, 'destroyMultiple']);
             Route::delete('/vouchers/{voucher}', [\App\Http\Controllers\Api\VoucherController::class, 'destroy']);
             Route::get('/vouchers/{voucher}', [\App\Http\Controllers\Api\VoucherController::class, 'show']);
 
             Route::get('/customers', [\App\Http\Controllers\Api\CustomerController::class, 'index']);
             Route::put('/customers/{customer}', [\App\Http\Controllers\Api\CustomerController::class, 'update']);
+            Route::delete('/customers/bulk-delete', [\App\Http\Controllers\Api\CustomerController::class, 'destroyMultiple']);
             Route::delete('/customers/{customer}', [\App\Http\Controllers\Api\CustomerController::class, 'destroy']);
             Route::get('/customers/{customer}', [\App\Http\Controllers\Api\CustomerController::class, 'show']);
         });
