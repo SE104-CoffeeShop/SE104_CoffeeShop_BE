@@ -32,6 +32,16 @@ class Invoice extends Model
 
     public function voucher()
     {
-        return $this->hasOne(Voucher::class, 'voucher_id');
+        return $this->belongsTo(Voucher::class, 'user_id');
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
+
+    public function staff()
+    {
+        return $this->belongsTo(User::class, 'staff_id');
     }
 }

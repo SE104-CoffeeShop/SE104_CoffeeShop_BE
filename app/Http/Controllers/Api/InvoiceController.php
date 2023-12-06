@@ -16,7 +16,7 @@ class InvoiceController extends Controller
 {
     public function index()
     {
-        $invoices = Invoice::with('invoiceDetails')->paginate();
+        $invoices = Invoice::with('invoiceDetails', 'customer', 'staff', 'voucher')->paginate();
 
         return response()->json($invoices);
     }
@@ -108,7 +108,7 @@ class InvoiceController extends Controller
 
     public function show(Invoice $invoice)
     {
-        $data = collect([$invoice, $invoice->invoiceDetails]);
+        $data = collect([$invoice, $invoice->invoiceDetails, $invoice->customer, $invoice->staff, $invoice->voucher]);
 
         return response()->json($data);
     }
