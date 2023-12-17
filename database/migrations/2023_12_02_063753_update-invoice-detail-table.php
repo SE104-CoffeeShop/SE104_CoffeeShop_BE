@@ -9,6 +9,7 @@ return new class extends Migration
     {
         Schema::table('invoice_detail', function ($table) {
             $table->integer('unit_price');
+            $table->string('product_name');
         });
     }
 
@@ -16,6 +17,7 @@ return new class extends Migration
     {
         Schema::table('invoice_detail', function ($table) {
             $table->dropColumn('unit_price');
+            $table->dropColumn('product_name');
         });
     }
 };

@@ -56,7 +56,8 @@ class CartService
             $productIdList[] = $pair['product_id'];
         }
 
-        $products = Product::whereIn('id', $productIdList)->pluck('unit_price', 'id');
+        $productsPrice = Product::whereIn('id', $productIdList)->pluck('unit_price', 'id');
+        $productsName = Product::whereIn('id', $productIdList)->pluck('name', 'id');
 
         $data = [];
 
@@ -67,7 +68,8 @@ class CartService
                 'invoice_id' => $invoiceId,
                 'product_id' => $productId,
                 'quantity' => $pair['quantity'],
-                'unit_price' => $products[$productId],
+                'unit_price' => $productsPrice[$productId],
+                'product_name' => $productsName[$productId],
             ];
         }
 

@@ -36,12 +36,14 @@ class InvoiceSeeder extends Seeder
                 'product_id' => 7,
                 'quantity' => 2,
                 'unit_price' => 23000,
+                'product_name' => 'Trà ô long',
             ],
             [
                 'invoice_id' => 1,
                 'product_id' => 8,
                 'quantity' => 7,
                 'unit_price' => 15000,
+                'product_name' => 'Trà lipton',
             ],
         ];
 
