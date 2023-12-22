@@ -35,7 +35,7 @@ class VoucherVerifyController extends Controller
 
         if ($quantity < 1) {
             $data = [
-                'is_available' => true,
+                'is_available' => false,
                 'voucher_type' => null,
                 'voucher_amount' => null,
                 'message' => 'Voucher nay da het luot su dung',
@@ -48,7 +48,7 @@ class VoucherVerifyController extends Controller
 
         if ($today > $endDate) {
             $data = [
-                'is_available' => true,
+                'is_available' => false,
                 'voucher_type' => null,
                 'voucher_amount' => null,
                 'message' => 'Voucher da het han',
@@ -59,7 +59,7 @@ class VoucherVerifyController extends Controller
 
         if ($today < $startDate) {
             $data = [
-                'is_available' => true,
+                'is_available' => false,
                 'voucher_type' => null,
                 'voucher_amount' => null,
                 'message' => 'Voucher chua den thoi han su dung',
