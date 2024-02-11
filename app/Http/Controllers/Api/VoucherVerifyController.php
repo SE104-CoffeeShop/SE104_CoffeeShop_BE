@@ -27,7 +27,7 @@ class VoucherVerifyController extends Controller
                 'voucher_type' => null,
                 'voucher_amount' => null,
                 'quantity' => null,
-                'message' => 'Voucher khong ton tai',
+                'message' => 'Voucher không tồn tại',
             ];
 
             return response()->json($data);
@@ -38,7 +38,7 @@ class VoucherVerifyController extends Controller
                 'is_available' => false,
                 'voucher_type' => null,
                 'voucher_amount' => null,
-                'message' => 'Voucher nay da het luot su dung',
+                'message' => 'Voucher này đã hết lượt sử dụng',
             ];
 
             return response()->json($data);
@@ -51,7 +51,7 @@ class VoucherVerifyController extends Controller
                 'is_available' => false,
                 'voucher_type' => null,
                 'voucher_amount' => null,
-                'message' => 'Voucher da het han',
+                'message' => 'Voucher đã hết hạn',
             ];
 
             return response()->json($data);
@@ -62,7 +62,7 @@ class VoucherVerifyController extends Controller
                 'is_available' => false,
                 'voucher_type' => null,
                 'voucher_amount' => null,
-                'message' => 'Voucher chua den thoi han su dung',
+                'message' => 'Voucher chưa đến thời gian sử dụng',
             ];
 
             return response()->json($data);
@@ -72,7 +72,7 @@ class VoucherVerifyController extends Controller
             'is_available' => true,
             'voucher_type' => $voucherType,
             'voucher_amount' => $voucherAmount,
-            'message' => 'Verify voucher thanh cong',
+            'message' => 'Verify voucher thành công',
         ];
 
         return response()->json($data);

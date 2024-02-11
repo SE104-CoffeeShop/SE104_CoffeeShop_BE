@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
@@ -70,5 +71,17 @@ class UserController extends Controller
         $user->delete();
 
         return response('', 204);
+    }
+
+    /**
+     * Get the user profile based on the token.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function profile(Request $request)
+    {
+        /** @var \App\Models\User $user */
+        $user = $request->user();
+        return new UserResource($user);
     }
 }

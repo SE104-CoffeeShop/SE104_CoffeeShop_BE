@@ -60,6 +60,7 @@ Route::prefix('/v1')->group(function () {
         Route::post('/invoices-finish/{invoice}', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'finish']);
         Route::post('/invoices-undo/{invoice}', [\App\Http\Controllers\Api\InvoiceStatusController::class, 'undo']);
 
+        Route::get('/profile', [UserController::class, 'profile']);
         Route::post('/logout', [AuthController::class, 'logout']);
     });
 

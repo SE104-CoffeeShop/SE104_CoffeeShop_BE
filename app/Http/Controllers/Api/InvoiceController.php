@@ -45,7 +45,7 @@ class InvoiceController extends Controller
             if (! $isVoucherAvailable || $quantity < 1 || $today > $endDate || $today < $startDate) {
                 $data = [
                     'isSuccess' => false,
-                    'message' => 'Voucher khong hop le hoac da het luot su dung, vui long xoa hoac kiem tra lai',
+                    'message' => 'Voucher không hợp lệ hoặc đã hết hạn sử dụng, vui lòng xoá hoặc kiểm tra lại',
                 ];
 
                 return response($data, 200);
@@ -93,7 +93,7 @@ class InvoiceController extends Controller
 
         $data = [
             'isSuccess' => true,
-            'message' => 'Da checkout thanh cong',
+            'message' => 'Đã checkout thành công',
         ];
 
         return response($data, 200);
